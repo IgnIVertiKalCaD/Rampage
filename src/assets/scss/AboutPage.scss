@@ -1,0 +1,39 @@
+.AboutS {
+  color: white;
+  text-align: center;
+  background: #1f1333;
+  border-radius: 25px;
+  margin: auto 30px;
+  transition: 0.5s;
+  &:hover {
+    background-color: #1c102f !important;
+    border-radius: 50px;
+  }
+}
+.lead {
+  text-align: start;
+  margin: 1% 5%;    line-height: 1.7;    font-size: 21px;
+
+  margin-top: 2%;
+}
+.mt-5 {
+  padding: 2% 0 0 0;
+}
+strong {
+    color: #c19bff;  transition: 0.5s;     font-size: 23px;
+
+    cursor: default;
+        &:hover {
+        color: #eee4ff;        
+      }
+}
+b {
+    transition: 0.4s;
+    color: #e14040;
+    cursor: default;
+  
+    &:hover {
+        color: #fa1c1c;
+        padding-left: 5px;
+    }
+  }

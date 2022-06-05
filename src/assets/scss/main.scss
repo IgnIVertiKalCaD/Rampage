@@ -1,0 +1,235 @@
+@import "../scss/background.scss";
+@import "../scss/variables.scss";
+@import "../scss/AboutPage.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+//header.vue//
+.my-md-0 {
+    padding: 5px;
+}
+a {
+  text-decoration: none !important;
+}
+
+.header {
+    margin: 10px 30px;
+    border-radius: 60px;
+  background-color: rgb(31, 19, 51);
+  font-weight: bold;
+  font-size: 17px;
+  font-family: "Archivo Black", sans-serif;
+}
+.image_logo {
+  font-size: 32px;
+  letter-spacing: 5px;
+  font-weight: 600;
+
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(
+    #ca4246 16.666%,
+    #e16541 16.666%,
+    #e16541 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    #8b9862 50%,
+    #8b9862 66.666%,
+    #476098 66.666%,
+    #476098 83.333%,
+    #a7489b 83.333%
+  );
+
+  /* Set thee background size and repeat properties. */
+  background-size: 57%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
+}
+
+/* Add animation on hover. */
+.image_logo:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+
+a.router-link-active {
+  background-color: rgb(60, 42, 89);
+  border-radius: 25px !important;
+  &:hover {
+    background-color: rgb(60, 42, 89);
+  }
+}
+.nav-link {
+  padding: 18px !important;
+  border-radius: 8px;
+  margin: auto 4px;
+  transition: 0.4s !important;
+  &:hover {
+    background-color: rgba(151, 150, 150, 0.096);
+    border-radius: 25px;
+    transition: 0.4s;
+  }
+}
+/** footer**/
+
+.btn {
+  border-radius: 50% !important;
+  padding: 1em !important;
+}
+.bi {
+  margin-bottom: 0em !important;
+}
+
+footer {
+  margin: 10px 30px;
+  border-radius: 60px;
+  background-color: #181026;
+  padding: 5px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: -moz-available;
+}
+
+/**
+//мне пиздец понравилось. Потом сделай// Сделал пизжу -
+z-body {
+  background: #135796;
+  animation: slidein 1s;
+}
+@keyframes slidein {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+**/
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+}
+.preloader .logo {
+  width: 12.5rem;
+  height: 19.5rem;
+  scale: 0.5;
+  background-image: url("~@/assets/logo.png");
+  background-repeat: no-repeat;
+}
+p {
+  font: 600 1.5rem;
+  margin-top: 1rem;
+}
+.preloader .circles {
+  display: flex;
+  margin-top: 1rem;
+}
+.preloader .circles .circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.75rem;
+  background-color: #cc66db;
+  border-radius: 50%;
+  animation-name: scaleIn;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  transform: scale(0);
+}
+.circle:nth-child(1) {
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  animation-delay: 0.1s;
+  background-color: #c665d4 !important;
+}
+.circle:nth-child(3) {
+  animation-delay: 0.2s;
+  background-color: #af55bb !important;
+}
+.circle:nth-child(4) {
+  animation-delay: 0.3s;
+  background-color: #a04bac !important;
+}
+.circle:nth-child(5) {
+  animation-delay: 0.4s;
+  background-color: #7e3788 !important;
+}
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/**Anti bootstrap**/
+ol,
+ul {
+  padding-left: 0rem !important;
+}
